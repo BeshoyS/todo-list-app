@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&display=swap");
+:root {
+  /*Fonts*/
+  --main-font: "Baloo 2", cursive;
+  /*Colors*/
+  --tasks-all-comp: #041955;
+  --input-pEdit-bg: #183075;
+  --circle-scrlHov: #1b66da;
+  --completed: #213a83;
+  --all-comp-scrlTrack: #5c76bd;
+  --add-tasksNum: #eb06ff;
+  --main-color: #3450a1;
+  --white-color: #fff;
+  --check-ed: #24d37c;
+  --edit-btn: #ff9800;
+  --delete-btn: #d20d45;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--main-font);
+}
+
+/*Custom scrollbar*/
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--all-comp-scrlTrack);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--input-pEdit-bg);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--circle-scrlHov);
+}
+
+body {
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  color: var(--white-color);
+}
+
+i {
+  cursor: pointer;
+}
+
+.d-none {
+  display: none;
+}
+
+/*main Body*/
+.main-body {
+  margin: 7% auto;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/*Header (input)*/
+.header-sec {
+  text-align: center;
+}
+
+.header-sec form {
+  position: relative;
+}
+
+.header-sec input,
+.header-sec input:focus-visible {
+  width: 100%;
+  margin: 0.8rem auto;
+  padding: 0.6rem;
+  text-indent: 0.8rem;
+  background-color: var(--input-pEdit-bg);
+  border: 0px;
+  outline: 0px;
+  caret-color: var(--main-color);
+  color: var(--white-color);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+::-webkit-input-placeholder {
+  color: var(--main-color);
+  padding-left: 5px;
+}
+
+.header-sec button {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  bottom: 0;
+  border: 0px;
+  background-color: transparent;
+}
+
+.header-sec i {
+  font-size: 1.9rem;
+  color: var(--add-tasksNum);
+}
+
+#errorMsg {
+  color: var(--edit-btn);
+}
+
+/* Tasks Section*/
+h3 {
+  margin: 1rem 0;
+}
+
+.tasks-sec {
+  height: 75%;
+}
+
+/* task  */
+.tasks-sec .task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--tasks-all-comp);
+  margin: 1rem auto;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.completed {
+  background-color: var(--completed) !important;
+  opacity: 0.6;
+}
+
+.task-content,
+.left-side,
+.right-side {
+  padding: 0.9rem 0;
+}
+
+/* Left Side (checkBox) */
+.left-side {
+  width: 9%;
+  display: flex;
+  justify-content: center;
+}
+
+.fa-circle {
+  border: 2px solid var(--circle-scrlHov);
+  color: transparent;
+}
+
+.fa-check-circle {
+  color: var(--check-ed);
+}
+
+/* Task Content */
+.task-content {
+  width: 79%;
+  border-inline: 2px solid var(--main-color);
+  padding-left: 1rem;
+}
+
+/*Edit the task Content*/
+p[contenteditable="true"] {
+  width: 98%;
+  background-color: var(--input-pEdit-bg);
+  padding: 0.5rem;
+  border: 0px;
+  outline: 0px;
+  caret-color: var(--main-color);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+/* right Side (edit - delete buttons) */
+.right-side {
+  text-align: center;
+  margin: auto;
+}
+.fa-circle,
+.fa-check-circle {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+/*Save Btn*/
+.fa-check {
+  color: var(--check-ed);
+  margin-right: 0.6rem;
+}
+
+.fa-edit {
+  color: var(--edit-btn);
+  margin-right: 0.6rem;
+}
+
+.fa-trash-alt {
+  color: var(--delete-btn);
+}
+
+/*All Tasks*/
+.all-tasks,
+.comp-tasks {
+  position: relative;
+  background-color: var(--all-comp-scrlTrack);
+  color: var(--tasks-all-comp);
+  font-weight: 600;
+  padding: 0.4rem;
+  margin: 1rem auto;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+:is(.all-tasks, .comp-tasks) div {
+  position: absolute;
+  inset: 0.4rem 0.4rem 0.4rem auto;
+  padding: 0 0.5rem;
+  font-weight: 600;
+  background-color: var(--add-tasksNum);
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+@media screen and (max-width: 870px) {
+  .main-body {
+    width: 95%;
+  }
+
+  /*Task Content*/
+  .task-content {
+    width: 75%;
+  }
+}

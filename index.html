@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Todo List</title>
+  </head>
+  <body>
+      <!-- App Layout -->
+    <div class="main-body">
+        <!-- Header (Input) -->
+      <div class="header-sec">
+        <h1>Todo List App</h1>
+        <form id='form'>
+          <input type="text" id="taskInp" placeholder="Type Your Task Here..." />
+          <button><i class="fas fa-plus-circle"></i></button>
+        </form>
+        <p id="errorMsg" class="d-none">The field can't be empty</p>
+      </div>
+      <!-- Tasks Area -->
+      <div id='tasks-sec' class="tasks-sec">
+        <h3>Tasks To Do</h3>
+        <div id='tasksSec' class="tasks-sec">
+            <!-- Where the Tasks will be added -->
+        </div>
+      </div>
+
+      <div>
+        <!-- Footer (the num of tasks and the completed ones) -->
+        <div class="all-tasks">
+          <p>All Tasks</p>
+          <div class="tasks-num">
+            <p id="allTasksNum">0</p>
+          </div>
+        </div>
+        <div class="comp-tasks">
+          <p>Completed Tasks</p>
+          <div class="tasks-num">
+            <p id="compTasksNum">0</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
